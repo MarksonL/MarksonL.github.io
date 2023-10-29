@@ -3,47 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <style>
+        .img-custom {
+            max-width: 30%;
+        }
+
+        .fade-in {
+            animation: fadeIn 1s;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Custom CSS for scroll transition */
+        .scroll-transition {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+    </style>
     <title>Tugas Desain Web 1</title>
 </head>
 <body>
-    <header>
+    <header class="bg-dark text-white py-4 text-center fade-in">
         <h1>Desain Web</h1>
         <nav>
-            <ul>
-                <li><a href="#">Nav</a></li>
-                <li><a href="#">Nav</a></li>
-                <li><a href="#">Nav</a></li>
+            <ul class="list-inline">
+                <li class="list-inline-item"><a href="calculator.html" class="text-white">Kalkulator</a></li>
             </ul>
         </nav>
     </header>
     
-    <main>
-
+    <main class="container py-4 fade-in">
         <section class="content">
-            <img src="D.jpg" class = "gambar-utama">
+            <div class="text-center scroll-transition">
+                <img src="foto/D.jpg" class="img-fluid img-custom" alt="Markson L. Djomie">
+            </div>
             <h2>Melodi dalam Setiap Langkah: Mengenal Markson L. Djomie</h2>
             <p>Markson L. Djomie, biasa dipanggil Mark, adalah mahasiswa di kampus Institut Teknologi Kalimantan. Di balik buku-buku dan proyek kuliahnya, terdapat passion yang membara dalam dua aspek penting dalam hidupnya: musik dan olahraga. Dengan tekad yang kuat dan semangat yang menggebu, Markson berhasil menemukan keseimbangan antara keduanya, menciptakan gaya hidup yang inspiratif dan berdaya dorong.</p>
-            <br>
-            <img src="A.jpg" class="gambar-kedua">
-            <br>
+
+            <div class="text-center scroll-transition">
+                <img src="foto/A.jpg" class="img-fluid img-custom" alt="Markson's Guitar">
+            </div>
             <h2>Harmoni dalam Nada dan Gerakan</h2>
             <p>Dalam dunia musik, Markson adalah seorang gitaris berbakat. Dia telah mengembangkan keterampilannya sejak usia muda dan terus mengasahnya sepanjang perjalanan hidupnya. Dari melodi lembut hingga solo energik, jari-jarinya menyentuh senar gitar dengan penuh perasaan. Tidak hanya di bidang musik, Markson juga menyukai olahraga dengan gairah yang sama. Dia adalah seorang pemain badminton. Baginya, olahraga adalah cara untuk menjaga tubuh dan pikiran tetap seimbang, sekaligus melampiaskan energi positif.</p>
-            <br>
-            <img src="B.jpg" class="gambar-kedua">
-            <br>
+
+            <div class="text-center scroll-transition">
+                <img src="foto/B.jpg" class="img-fluid img-custom" alt="Markson Playing Badminton">
+            </div>
             <h2>Mengatasi Tantangan dan Menemukan Keseimbangan</h2>
             <p>Kehidupan sebagai mahasiswa tidaklah mudah, terlebih lagi saat mencoba memadukan dua hobi yang sangat berbeda. Namun, Markson telah mengatasi tantangan dengan tekad dan semangatnya. Dia merencanakan waktu dengan bijak, memberikan prioritas pada kuliah dan kegiatan akademis, sambil tetap meluangkan waktu untuk bermain gitar dan berolahraga. Markson berbagi pandangannya tentang bagaimana keduanya saling melengkapi. "Musik memberi saya cara untuk mengekspresikan diri dan meresapi emosi. Di sisi lain, olahraga membantu menjaga tubuh saya bugar dan memberi saya energi positif untuk menghadapi tantangan akademis."</p>
-            <br>
-            <img src="C.jpg" class = "gambar-kedua">
-            <br>
+
+            <div class="text-center scroll-transition">
+                <img src="foto/C.jpg" class="img-fluid img-custom" alt="Markson's Inspirational Journey">
+            </div>
             <h2>Inspirasi bagi Orang Lain</h2>
             <p>Markson L. Djomie adalah inspirasi hidup bagi banyak orang di sekitarnya. Dia mengajarkan kepada kita bahwa keseimbangan dalam hidup adalah kunci untuk meraih pencapaian maksimal dalam berbagai bidang. Dengan dedikasi, tekad, dan semangat, kita dapat mengejar apa pun yang kita cintai, sekaligus mempertahankan keseimbangan yang penting. Kisah Markson mengingatkan kita bahwa passion dan hobi adalah sumber kebahagiaan dan pertumbuhan pribadi. Dia adalah bukti hidup bahwa kita dapat mencapai harmoni yang indah dengan menjalani kehidupan dengan penuh semangat dan dedikasi, baik dalam nada yang indah maupun langkah yang kuat.</p>
         </section>
     </main>
     
-    <footer>
+    <footer class="bg-dark text-white py-4 text-center fade-in">
         <p>Tugas Individu 1 Desain Web, Markson L. Djomie 11211050.</p>
     </footer>
+
+    <script>
+        window.addEventListener("scroll", function () {
+            let elements = document.querySelectorAll('.scroll-transition');
+            elements.forEach(function (element) {
+                if (isElementInViewport(element)) {
+                    element.classList.remove('scroll-transition');
+                }
+            });
+        });
+
+        function isElementInViewport(el) {
+            var rect = el.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+    </script>
 </body>
 </html>

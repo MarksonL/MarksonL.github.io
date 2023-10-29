@@ -1,19 +1,24 @@
+/* Resetting Margins and Padding */
 body, h1, h2, p, ul, li {
     margin: 0;
     padding: 0;
 }
 
+/* Default Font and Background */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
 }
 
+/* Header Styling */
 header {
     background-color: #333;
     color: white;
-    padding: 10px 0;
+    padding: 20px 0;
     text-align: center;
 }
 
+/* Navigation Styling */
 nav ul {
     list-style: none;
 }
@@ -25,45 +30,84 @@ nav ul li {
 
 nav a {
     text-decoration: none;
-    color: white;
+    color: #f0f0f0;
+    font-weight: 600;
+    transition: color 0.3s;
 }
 
+nav a:hover {
+    color: #66a3ff;
+}
+
+/* Main Content Styling */
 main {
     padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
 }
 
-.gambar-utama {
-    max-width: 20%;
-    height: auto;
+.gambar-utama,
+.gambar-kedua {
+    max-width: 50%; /* Set a maximum width to fit their containers */
+    height: auto; /* Maintain the aspect ratio */
     display: block;
     margin: 20px auto;
-    display: flex;
 }
 
-.gambar-kedua {
-    max-width: 50%;
-    height: auto;
-    display: block;
-    margin: auto;
-}
 
+/* Content Container Styling */
 .content {
     max-width: 800px;
     margin: 0 auto;
+    padding: 20px;
 }
 
+/* Footer Styling */
 footer {
     background-color: #333;
-    color: white;
+    color: #f0f0f0;
     text-align: center;
-    padding: 10px 0;
+    padding: 20px 0;
 }
 
-@media (min-width: 1024px) {
+/* Styles for the calculator page */
+.calculator {
+    text-align: center;
+    border: 2px solid #66a3ff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    background-color: #ffffff;
 }
 
-@media (max-width: 1023px) and (min-width: 768px) {
+#display {
+    width: 100%;
+    font-size: 24px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #66a3ff;
+    border-radius: 5px;
 }
 
-@media (max-width: 767px) {
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+}
+
+button {
+    font-size: 20px;
+    padding: 10px;
+    background-color: #66a3ff;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #393ffc;
 }
